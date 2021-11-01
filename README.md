@@ -18,24 +18,27 @@ To use NewsCrawler Application you need to install some dependencies.<br>
 		$ cd jupyter_dir
 		$ virtualenv jupyter_env
 		```
-	+ Activate the virtual environment using the source command-line tool.
+	+ Activate the virtual environment using the source command-line tool.<br>
 		`$ source jupyter_env/bin/activate`
 	+ Install and launch Jupyter Notebook
 		```	
-$ pip3 install jupyter
-$ jupyter notebook
+		$ pip3 install jupyter
+		$ jupyter notebook
 		```
 
 - For user input we use:<br>
-	`$ pip install ipywidgets`
-	`$ pip install traitlets`
+	```
+	$ pip install ipywidgets
+	$ pip install traitlets
+	
+	```
 - NewsApiClient to find URLs of all the news on given topic.:<br>
 	`$ pip install newsapi-python`
 
-Find news articles
-------------------
+News articles
+-------------
 
-### Find top news article URLs
+### Find news article URLs
 We use the News API to find the top trending news about the topic from trustworthy sources like CNBC, BBC News, etc. (to find a diversified, yet reputable mix of news articles can be found by selecting multiple sources at a time).
 We're only fetching 5 news articles, but we can fetch any number of articles available by changing the value of `page_size`.
 
