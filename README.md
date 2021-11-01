@@ -8,25 +8,54 @@ Requirements
 
 To use NewsCrawler Application you need to install some dependencies.<br>
 - To install python3 on ubuntu, Open the terminal and run the command below:<br>
-	`sudo apt install python3.6`
+	`$ sudo apt install python3.6`
 - To install Jupyter Notebook on ubuntu:
-	+ Install the virtualenv (Python tool used for creating isolated Python environments.)
-		`sudo -H pip3 install virtualenv`
+	+ Install the virtualenv (Python tool used for creating isolated Python environments.)<br>
+		`$ sudo -H pip3 install virtualenv`
 	+ Create a virtual environment for launching Jupyter
 		``` 
-			mkdir jupyter_dir
-			cd jupyter_dir
-			virtualenv jupyter_env
+$ mkdir jupyter_dir
+$ cd jupyter_dir
+$ virtualenv jupyter_env
 		```
 	+ Activate the virtual environment using the source command-line tool.
-		`source jupyter_env/bin/activate`
+		`$ source jupyter_env/bin/activate`
 	+ Install and launch Jupyter Notebook
-			`pip3 install jupyter
-			jupyter notebook`
+		```	
+$ pip3 install jupyter
+$ jupyter notebook
+		```
 
 - For user input we use:<br>
-	`pip install ipywidgets`
-	`pip install traitlets`
+	`$ pip install ipywidgets`
+	`$ pip install traitlets`
 - NewsApiClient to find URLs of all the news on given topic.:<br>
-	`pip install newsapi-python`
+	`$ pip install newsapi-python`
 
+Find news articles
+------------------
+
+### Find top news article URLs
+We use the News API to find the top trending news about the topic from trustworthy sources like CNBC, BBC News, etc. (to find a diversified, yet reputable mix of news articles can be found by selecting multiple sources at a time).
+We're only fetching 5 news articles, but we can fetch any number of articles available by changing the value of `page_size`.
+
+Some trustworthy sources:
++ bbc-news, cnn, espn,
++ the-hindu, the-times-of-india, news24,
++ google-news, crypto-coins-news, bloomberg etc.
+
+
+### Call to NewsApi
+Python wrapper around A JSON API for live news and blog headline
+
+### Create list of URLs
+Create a list of URLs to crawl through from the API
+
+### Iterate through URLs and capture text
+Here we'll utilize the beautiful soup library to parse through html content and store only the article content. For each url:
++ We fetch the HTML
++ Parse the HTML document using Beautiful Soup
++ Find and store the content of news article inside the webpage
+
+### Display the articles
+Use the Display class to present the articles in Markdown
